@@ -18,17 +18,22 @@ Restful API with Asp.Net Core, Entity Framework with Postgresql, and Swagger to 
 - Repository Pattern
 
 ## Start
-Clone the repository and go to project root
+Clone the repository and go to project root and entry in web project
 ```
 $ git clone https://github.com/matheus-santos-bonifacio/rest-api-with-asp-net-core
-$ cd rest-api-with-asp-net-core
+$ cd rest-api-with-asp-net-core/web
 ```
 If you don't have the database, initialize the docker container
 ```
 $ docker-compose --profile database up -d
 ```
-But if you already have a postgres database in your machine you must in both cases create database with the migration
-- With docker cli
+But if you already have a postgres database in your machine you can use the below configuration
+- Database: net_backend_architecture
+- Username: aspnet
+- Password: aspnet
+
+But in both cases you must create database with the migration
+- With docker cli (you must have entity framework tool, if you don't have you can install with `dotnet tool install --global dotnet-ef`)
 ```
 $ docker ef database update
 ```
