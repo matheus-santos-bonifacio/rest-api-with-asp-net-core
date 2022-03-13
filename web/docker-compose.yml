@@ -1,0 +1,18 @@
+version: "3.9"
+
+services:
+  db:
+    image: postgres:14.2
+    container_name: net_backend_architecture
+    profiles: ["dev", "dev-backend", "database"]
+    ports:
+      - 5432:5432
+    volumes:
+      - net_backend_architecture:/var/lib/postgresql/data
+    environment:
+      POSTGRES_USER: aspnet
+      POSTGRES_PASSWORD: aspnet
+      POSTGRES_DB: net_backend_architecture
+
+volumes:
+  net_backend_architecture:
